@@ -1,3 +1,11 @@
+@import "tailwindcss";
+
+/* index.css ou globals.css */
+html, body, #root {
+  width: 100%;
+}
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
