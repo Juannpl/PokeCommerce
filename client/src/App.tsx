@@ -1,38 +1,30 @@
-import { Component } from 'react';
-import { faker } from '@faker-js/faker';
-import Header from './components/Header';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Accueil from './components/Home';
+import Profil from './components/Profil';
 
-interface AppState {
+interface AppProps {
+  users: { id: number; name: string; email: string }[];
   prenom: string;
   nom: string;
   age: number;
   adresse: string;
 }
 
-class App extends Component<{}, AppState> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      prenom: faker.person.firstName(),
-      nom: faker.person.lastName(),
-      age: faker.number.int({ min: 18, max: 100 }),
-      adresse: faker.location.streetAddress(),
-    };
-  }
+const App: React.FC<AppProps> = (props) => {
+  const { users, prenom, nom, age, adresse } = props;
 
-  render() {
-    return (
-      <div>
-        <Header
-          prenom={this.state.prenom}
-          nom={this.state.nom}
-          age={this.state.age}
-          adresse={this.state.adresse}
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Accueil />} />
+        <Route
+          path="/profil"
+          element={<Profil users={users} prenom={prenom} nom={nom} age={age} adresse={adresse} />}
         />
-      </div>
-    );
-  }
-}
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default App;
-

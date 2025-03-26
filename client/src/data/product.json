@@ -1,0 +1,12 @@
+{
+    "produits": [
+      { "id": 1, "nom": "Produit 1", "prix": 10.99 },
+      { "id": 2, "nom": "Produit 2", "prix": 5.99 },
+      { "id": 3, "nom": "Produit 3", "prix": 7.99 }
+    ],
+    "promotions": [
+      { "id": 1, "nom": "Promotion 1", "description": "10% de réduction" },
+      { "id": 2, "nom": "Promotion 2", "description": "20% de réduction" }
+    ]
+  }
+  
