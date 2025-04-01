@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Accueil from './pages/Home';
 import Profil from './pages/Profil';
+import About from './pages/About';
 
 interface AppProps {
   users: { id: number; name: string; email: string }[];
@@ -19,11 +20,15 @@ const App: React.FC<AppProps> = (props) => {
       <Routes>
         <Route
           index 
-          element={<Accueil users={users} prenom={prenom} nom={nom} age={age} adresse={adresse} />}
+          element={<Accueil prenom={prenom} nom={nom} age={age} adresse={adresse} />}
         />
         <Route
           path="/profil"
           element={<Profil users={users} prenom={prenom} nom={nom} age={age} adresse={adresse} />}
+        />
+        <Route
+          path="/about"
+          element={<About prenom={prenom} nom={nom} age={age} adresse={adresse} />}
         />
       </Routes>
     </BrowserRouter>

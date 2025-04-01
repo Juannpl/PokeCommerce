@@ -3,4 +3,20 @@
 /* index.css ou globals.css */
 html, body, #root {
   width: 100%;
-} 
+}
+
+/* Pour tous les navigateurs */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Pour Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Pour Internet Explorer & Edge */
+body {
+  -ms-overflow-style: none;
+  background-color: #F1EFEC;
+}

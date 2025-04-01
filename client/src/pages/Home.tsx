@@ -1,8 +1,8 @@
 import { faker } from "@faker-js/faker";
 import Header from '../components/Header';
+import Footer from "../components/Footer";
 
 interface ProfilProps {
-  users: { id: number; name: string; email: string }[];
   prenom: string;
   nom: string;
   age: number;
@@ -28,7 +28,7 @@ const Home: React.FC<ProfilProps> = ({ prenom, nom, age, adresse }) => {
       <div className="container mx-auto px-4 py-8">
         {/* Section Produits Récents */}
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-lime-800">Produits récents</h2>
+          <h2 className="text-2xl font-bold mb-4 text-black">Produits récents</h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
             {produits.map((produit) => (
               <li
@@ -45,7 +45,7 @@ const Home: React.FC<ProfilProps> = ({ prenom, nom, age, adresse }) => {
 
         {/* Section Promotions */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-lime-800">Promotions en cours</h2>
+          <h2 className="text-2xl font-bold mb-4 text-black">Promotions en cours</h2>
           <ul className="space-y-4">
             {promotions.map((promotion) => (
               <li
@@ -56,9 +56,10 @@ const Home: React.FC<ProfilProps> = ({ prenom, nom, age, adresse }) => {
                 <p className="text-gray-700">{promotion.description}</p>
               </li>
             ))}
-          </ul>Tasty Bronze Hat
+          </ul>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };
