@@ -9,7 +9,7 @@ interface ProfilProps {
   adresse: string;
 }
 
-const produits = [...Array(10)].map(() => ({
+const produits = [...Array(20)].map(() => ({
   id: faker.string.uuid(),
   nom: faker.commerce.productName(),
   prix: faker.commerce.price(),
@@ -33,9 +33,13 @@ const Home: React.FC<ProfilProps> = ({ prenom, nom, age, adresse }) => {
             {produits.map((produit) => (
               <li
                 key={produit.id}
-                className="bg-white< shadow-lg rounded-lg p-4 hover:shadow-xl transition duration-300"
+                className="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl hover:scale-105 hover:shadow-2xl transition-transform duration-300"
               >
-                <img src="https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/primary/ProductShowcasesampleimages/JPEG/Product+Showcase-1.jpg" alt="Image du produit" />
+                <img 
+                  src="https://pokemagic.fr/cdn/shop/files/pokemagic-pokemon-booster-EV1-FR.jpg?v=1726610341" 
+                  alt="Image du produit" 
+                  className="w-full h-40 object-cover rounded-md"
+                />
                 <p className="text-lg font-semibold p-2">{produit.nom}</p>
                 <p className="text-gray-500 p-2">{produit.prix}€</p>
               </li>

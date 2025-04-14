@@ -5,15 +5,19 @@ import Profil from './pages/Profil';
 import About from './pages/About';
 
 interface AppProps {
-  users: { id: number; name: string; email: string }[];
   prenom: string;
   nom: string;
   age: number;
   adresse: string;
+  email: string;
+  bio: string;
+  avatarUrl?: string;
+  phone: string;
+  job: string;
 }
 
 const App: React.FC<AppProps> = (props) => {
-  const { users, prenom, nom, age, adresse } = props;
+  const { prenom, nom, age, adresse, email, bio, avatarUrl, phone, job} = props;
 
   return (
     <BrowserRouter>
@@ -24,7 +28,7 @@ const App: React.FC<AppProps> = (props) => {
         />
         <Route
           path="/profil"
-          element={<Profil users={users} prenom={prenom} nom={nom} age={age} adresse={adresse} />}
+          element={<Profil prenom={prenom} nom={nom} age={age} adresse={adresse} email={email} bio={bio} avatarUrl={avatarUrl} phone={phone} job={job} />}
         />
         <Route
           path="/about"
